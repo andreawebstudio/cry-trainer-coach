@@ -119,7 +119,7 @@ strong{font-weight:600;color:var(--espresso)}
   .nav li{border-bottom:1px solid var(--line)}
   .nav a.nav-link{display:block;padding:15px 4px;font-size:1.05rem}
   .nav a.nav-link::after{display:none}
-  .nav .btn{display:none} /* CTA dell'header solo su desktop */
+  .nav .btn{margin-top:24px;min-height:52px;font-size:.82rem} /* CTA in fondo al menu burger */
   body.menu-open{overflow:hidden}
 }
 
@@ -268,6 +268,17 @@ strong{font-weight:600;color:var(--espresso)}
 .f-legal{font-size:.82rem;color:#CDBFB8;margin:0}
 
 /* Reveal */
+.about-cta{margin-top:12px}
+/* Barra CTA fissa: visibile solo su mobile */
+.sticky-cta{display:none}
+@media (max-width:1023px){
+  .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:90;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(250,247,243,.96);border-top:1px solid var(--line);box-shadow:0 -8px 24px -18px rgba(51,42,40,.35);transform:translateY(110%);transition:transform .35s var(--ease)}
+  .sticky-cta.show{transform:none}
+  .sticky-cta .btn{width:100%}
+  body.has-sticky .site-footer{padding-bottom:110px}
+  body.menu-open .sticky-cta{transform:translateY(110%)}
+}
+
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .45s var(--ease),transform .45s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 .no-js .reveal{opacity:1;transform:none}
@@ -397,6 +408,7 @@ strong{font-weight:600;color:var(--espresso)}
       <div class="divider" aria-hidden="true"></div>
       <p>Non credo che il percorso giusto sia necessariamente quello più rigido. Credo nell'importanza di trovare un <strong>equilibrio</strong> tra ciò che desideriamo raggiungere e ciò che possiamo costruire nella nostra quotidianità.</p>
       <p>Il mio obiettivo è mettere al centro la persona e promuovere un approccio al benessere che possa <strong>accompagnarla nel tempo</strong>.</p>
+      <a class="btn btn-primary about-cta" href="#contatti">Richiedi una consulenza</a>
     </div>
   </div>
 </section>
@@ -467,6 +479,9 @@ strong{font-weight:600;color:var(--espresso)}
         <div class="ap-item reveal"><h3>Equilibrio</h3><p>Abitudini realistiche, compatibili con la tua quotidianità e costanti nel tempo.</p></div>
         <div class="ap-item reveal"><h3>Qualità della vita</h3><p>Uno sguardo al benessere che va oltre il solo risultato estetico.</p></div>
       </div>
+    </div>
+    <div class="section-cta reveal">
+      <a class="btn btn-primary" href="#contatti">Richiedi una consulenza</a>
     </div>
   </div>
 </section>
@@ -539,6 +554,9 @@ strong{font-weight:600;color:var(--espresso)}
       <li class="step"><span class="step-dot" aria-hidden="true">03</span><h3>Valutiamo il percorso</h3><p>Se c'è un'attività adatta a te, definiamo insieme le modalità per iniziare.</p></li>
       <li class="step"><span class="step-dot" aria-hidden="true">04</span><h3>Iniziamo insieme</h3><p>Muoviamo i primi passi, rispettando i tuoi tempi e la tua quotidianità.</p></li>
     </ol>
+    <div class="section-cta reveal">
+      <a class="btn btn-primary" href="#contatti">Fai il primo passo</a>
+    </div>
   </div>
 </section>
 
@@ -587,6 +605,9 @@ strong{font-weight:600;color:var(--espresso)}
         <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">Come posso richiedere informazioni?<span class="faq-icon" aria-hidden="true"></span></button></h3>
         <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div><p>Puoi scrivermi compilando il modulo nella sezione <a href="#contatti">Contatti</a>: ti risponderò con tutte le informazioni aggiornate.</p></div></div>
       </div>
+    </div>
+    <div class="section-cta reveal">
+      <a class="btn btn-primary" href="#contatti">Richiedi una consulenza</a>
     </div>
   </div>
 </section>
@@ -647,6 +668,11 @@ strong{font-weight:600;color:var(--espresso)}
 </section>
 
 </main>
+
+<!-- Barra CTA fissa (solo mobile): compare dopo la hero, sparisce quando il form è visibile -->
+<div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+  <a class="btn btn-primary" href="#contatti" tabindex="-1">Richiedi una consulenza</a>
+</div>
 
 <!-- 11. FOOTER -->
 <footer class="site-footer">
@@ -737,6 +763,21 @@ strong{font-weight:600;color:var(--espresso)}
   var ticking=false;
   window.addEventListener('scroll',function(){ if(!ticking){ ticking=true; requestAnimationFrame(function(){ updateSteps(); ticking=false; }); } },{passive:true});
   window.addEventListener('resize',updateSteps); updateSteps();
+
+  /* Barra CTA fissa su mobile: dopo la hero, nascosta quando i Contatti sono in vista */
+  var sticky=document.getElementById('sticky-cta'), hero=document.getElementById('home'), contatti=document.getElementById('contatti');
+  var stickyLink=sticky.querySelector('a');
+  function updateSticky(){
+    var pastHero=hero.getBoundingClientRect().bottom<0;
+    var cr=contatti.getBoundingClientRect(), atForm=cr.top<window.innerHeight && cr.bottom>0;
+    var show=mq.matches && pastHero && !atForm;
+    sticky.classList.toggle('show',show);
+    sticky.setAttribute('aria-hidden',!show);
+    stickyLink.tabIndex=show?0:-1;
+    document.body.classList.toggle('has-sticky',mq.matches);
+  }
+  window.addEventListener('scroll',function(){ requestAnimationFrame(updateSticky); },{passive:true});
+  window.addEventListener('resize',updateSticky); updateSticky();
 
   /* Form contatti */
   var form=document.getElementById('contact-form'), status=document.getElementById('form-status');
