@@ -11,7 +11,7 @@
 <meta property="og:site_name" content="Cry Trainer Coach">
 <meta property="og:title" content="Cry Trainer Coach | Coaching online per donne">
 <meta property="og:description" content="Allenati ovunque, ritrova la tua energia e costruisci la versione migliore di te con un percorso di coaching online pensato su di te.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1720166756586-2ad3675a8e47?auto=format&fit=crop&w=1200&h=630&q=75">
+<meta property="og:image" content="https://images.unsplash.com/photo-1623874228601-f4193c7b1818?auto=format&fit=crop&w=1200&h=630&q=75">
 <meta name="twitter:card" content="summary_large_image">
 <!-- TODO prima della pubblicazione definitiva: aggiungere <link rel="canonical"> e og:url con il dominio definitivo. -->
 
@@ -19,8 +19,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 <link rel="preload" as="image"
-  href="https://images.unsplash.com/photo-1720166756586-2ad3675a8e47?auto=format&fit=crop&w=900&h=1125&q=72"
-  imagesrcset="https://images.unsplash.com/photo-1720166756586-2ad3675a8e47?auto=format&fit=crop&w=600&h=750&q=72 600w, https://images.unsplash.com/photo-1720166756586-2ad3675a8e47?auto=format&fit=crop&w=900&h=1125&q=72 900w, https://images.unsplash.com/photo-1720166756586-2ad3675a8e47?auto=format&fit=crop&w=1300&h=1625&q=72 1300w"
+  href="https://images.unsplash.com/photo-1623874228601-f4193c7b1818?auto=format&fit=crop&w=900&h=1125&q=72"
+  imagesrcset="https://images.unsplash.com/photo-1623874228601-f4193c7b1818?auto=format&fit=crop&w=600&h=750&q=72 600w, https://images.unsplash.com/photo-1623874228601-f4193c7b1818?auto=format&fit=crop&w=900&h=1125&q=72 900w, https://images.unsplash.com/photo-1623874228601-f4193c7b1818?auto=format&fit=crop&w=1300&h=1625&q=72 1300w"
   imagesizes="(max-width:899px) 92vw, 46vw">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -137,30 +137,32 @@ strong{font-weight:600;color:var(--ink)}
    1. HERO
    ========================================================= */
 .hero{position:relative;padding:calc(var(--header-h) + clamp(32px,6vw,72px)) 0 clamp(64px,8vw,104px);overflow:hidden}
-.hero::before{content:"";position:absolute;right:0;top:0;bottom:0;width:34%;background:var(--sand);z-index:0}
-.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(40px,6vw,96px);align-items:center}
+.hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:30%;background:var(--sand);z-index:0}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr;justify-items:center;text-align:center;gap:clamp(48px,6vw,72px)}
+.hero-text{max-width:900px}
+.hero .cta-row{justify-content:center}
 .hero-tag{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 10px;border-radius:999px;background:rgba(255,255,255,.6);border:1px solid var(--line);font-size:.8rem;font-weight:600;color:var(--ink);margin:0 0 28px}
 .hero-tag .dot{width:8px;height:8px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 4px rgba(180,127,124,.2)}
 .hero h1{font-size:clamp(2.9rem,7vw,6rem);line-height:.98;letter-spacing:-.03em}
 .hero h1 em{display:block}
-.hero-sub{margin:30px 0 40px;font-size:clamp(1.05rem,1.45vw,1.22rem);max-width:33em;color:var(--text)}
-.hero-facts{display:flex;flex-wrap:wrap;gap:14px 0;margin-top:52px;padding-top:28px;border-top:1px solid var(--line)}
+.hero-sub{margin:30px auto 40px;font-size:clamp(1.05rem,1.45vw,1.22rem);max-width:33em;color:var(--text)}
+.hero-facts{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 0;margin-top:52px;padding-top:28px;border-top:1px solid var(--line)}
 .hero-facts li{font-size:.9rem;font-weight:500;color:var(--ink);padding-right:22px;margin-right:22px;border-right:1px solid var(--line);line-height:1.35}
 .hero-facts li:last-child{border-right:0;margin-right:0;padding-right:0}
 .hero-facts b{display:block;font-family:var(--serif);font-weight:400;font-size:1.5rem;letter-spacing:-.02em;color:var(--rose-ink);margin-bottom:2px}
 
-.hero-media{position:relative;justify-self:end;width:100%;max-width:520px}
+.hero-media{position:relative;justify-self:center;width:100%;max-width:460px}
 .hero-photo{position:relative;aspect-ratio:4/5;border-radius:999px 999px var(--r-lg) var(--r-lg);overflow:hidden;background:var(--sand-soft);clip-path:inset(100% 0 0 0 round 999px 999px 28px 28px);animation:unveil 1.4s var(--ease-out) .2s forwards}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transform:scale(1.12);animation:settle 2s var(--ease-out) .2s forwards}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;transform:scale(1.12);animation:settle 2s var(--ease-out) .2s forwards}
 @keyframes unveil{to{clip-path:inset(0 0 0 0 round 999px 999px 28px 28px)}}
 @keyframes settle{to{transform:scale(1)}}
-.hero-badge{position:absolute;left:-56px;bottom:56px;width:132px;height:132px;border-radius:50%;background:var(--plum);color:var(--on-dark);display:grid;place-items:center;box-shadow:0 24px 50px -24px rgba(42,32,40,.6)}
+.hero-badge{position:absolute;left:-84px;bottom:64px;width:132px;height:132px;border-radius:50%;background:var(--plum);color:var(--on-dark);display:grid;place-items:center;box-shadow:0 24px 50px -24px rgba(42,32,40,.6)}
 .hero-badge svg.ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
 .hero-badge text{font-family:var(--sans);font-size:9.4px;font-weight:600;letter-spacing:.24em;fill:currentColor}
 .hero-badge .center{font-family:var(--serif);font-style:italic;font-size:1.65rem;line-height:1;color:var(--cream)}
 .hero-badge .center::after{content:".";color:var(--rose)}
 @keyframes spin{to{transform:rotate(360deg)}}
-.hero-note{position:absolute;right:-12px;top:12%;background:var(--cream);border-radius:var(--r-md);padding:14px 18px;box-shadow:0 20px 40px -24px rgba(42,32,40,.45);font-size:.82rem;line-height:1.35;color:var(--ink);max-width:180px}
+.hero-note{position:absolute;right:-130px;top:22%;text-align:left;background:var(--cream);border-radius:var(--r-md);padding:14px 18px;box-shadow:0 20px 40px -24px rgba(42,32,40,.45);font-size:.82rem;line-height:1.35;color:var(--ink);max-width:180px}
 .hero-note strong{display:block;font-family:var(--serif);font-weight:400;font-size:1.15rem;margin-bottom:2px}
 
 /* Marquee */
@@ -263,7 +265,7 @@ strong{font-weight:600;color:var(--ink)}
 .collage-main img,.collage-detail img{width:100%;height:100%;object-fit:cover}
 .collage-detail{position:absolute;right:0;bottom:0;width:52%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:10px solid var(--sand);background:var(--sand-soft)}
 .collage-word{position:absolute;left:-6px;top:28px;background:var(--rose);color:#fff;font-family:var(--serif);font-style:italic;font-size:1.05rem;padding:10px 18px;border-radius:999px;transform:rotate(-6deg)}
-.benefit-list{margin-top:44px;counter-reset:b}
+.benefit-list{margin:0;counter-reset:b}
 .benefit{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:8px 32px;align-items:baseline;padding:24px 0;border-top:1px solid rgba(56,44,53,.18);transition:padding-left .45s var(--ease)}
 .benefit:last-child{border-bottom:1px solid rgba(56,44,53,.18)}
 .benefit:hover{padding-left:12px}
@@ -295,11 +297,6 @@ strong{font-weight:600;color:var(--ink)}
 .r-half svg{width:44px;height:44px;opacity:.6}
 .r-half .word{font-family:var(--serif);font-style:italic;font-size:1.8rem;color:var(--ink)}
 .r-transform .ph-label{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);white-space:nowrap}
-.r-progress{padding:32px 28px;display:flex;flex-direction:column;gap:22px}
-.r-progress h3{font-size:1.4rem}
-.bars{display:flex;align-items:flex-end;gap:10px;height:150px;margin-top:auto;padding-bottom:4px;border-bottom:1px solid rgba(56,44,53,.2)}
-.bars span{flex:1;border-radius:8px 8px 2px 2px;background:rgba(180,127,124,.28);height:var(--h)}
-.bars span:last-child{background:rgba(180,127,124,.55)}
 .r-quote{padding:32px 28px;display:flex;flex-direction:column;gap:14px;min-height:260px}
 .r-quote .qm{font-family:var(--serif);font-size:4rem;line-height:.6;color:var(--rose);height:30px}
 .skel{height:10px;border-radius:6px;background:rgba(56,44,53,.1)}
@@ -357,15 +354,16 @@ strong{font-weight:600;color:var(--ink)}
 .final{overflow:hidden}
 .final::before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;border:1px solid var(--line-dark);right:-220px;top:-260px}
 .final::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;border:1px solid var(--line-dark);right:-110px;top:-150px}
-.final-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(48px,7vw,100px);align-items:center}
+.final-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr;justify-items:center}
+.final-head{max-width:860px}
 .final h2{font-size:clamp(2.4rem,5.4vw,4.4rem);line-height:1.02;letter-spacing:-.03em}
 .final h2 em{color:#D9AFAB}
-.final-text{margin:28px 0 0;font-size:1.12rem;max-width:40ch}
-.final-steps{margin-top:40px;display:grid;gap:14px}
+.final-text{margin:28px auto 0;font-size:1.12rem;max-width:40ch}
+.final-steps{margin-top:36px;display:flex;flex-wrap:wrap;justify-content:center;gap:14px 32px}
 .final-steps li{display:flex;gap:14px;align-items:center;font-size:.98rem;color:var(--on-dark)}
 .final-steps span{width:30px;height:30px;border-radius:50%;border:1px solid var(--line-dark);display:grid;place-items:center;font-size:.75rem;font-weight:600;color:#D9AFAB;flex:none}
 
-.form-card{background:var(--cream);color:var(--text);border-radius:var(--r-lg);padding:clamp(28px,4vw,44px);box-shadow:0 40px 80px -40px rgba(0,0,0,.5)}
+.form-card{background:var(--cream);color:var(--text);border-radius:var(--r-lg);width:100%;max-width:720px;padding:clamp(28px,4vw,44px);box-shadow:0 40px 80px -40px rgba(0,0,0,.5)}
 .form-card h3{font-size:1.6rem;margin-bottom:6px;color:var(--ink)}
 .form-card > p{font-size:.95rem;margin-bottom:26px}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -584,13 +582,13 @@ strong{font-weight:600;color:var(--ink)}
     </div>
 
     <div class="hero-media">
-      <!-- FOTO PROVVISORIA (Unsplash). Sostituire con una fotografia di Cry, fornita e autorizzata da lei. -->
+      <!-- FOTO PROVVISORIA senza persone (Unsplash). Sostituire con una fotografia di Cry, fornita e autorizzata da lei. -->
       <div class="hero-photo">
         <img
-          src="https://images.unsplash.com/photo-1720166756586-2ad3675a8e47?auto=format&fit=crop&w=900&h=1125&q=72"
-          srcset="https://images.unsplash.com/photo-1720166756586-2ad3675a8e47?auto=format&fit=crop&w=600&h=750&q=72 600w, https://images.unsplash.com/photo-1720166756586-2ad3675a8e47?auto=format&fit=crop&w=900&h=1125&q=72 900w, https://images.unsplash.com/photo-1720166756586-2ad3675a8e47?auto=format&fit=crop&w=1300&h=1625&q=72 1300w"
+          src="https://images.unsplash.com/photo-1623874228601-f4193c7b1818?auto=format&fit=crop&w=900&h=1125&q=72"
+          srcset="https://images.unsplash.com/photo-1623874228601-f4193c7b1818?auto=format&fit=crop&w=600&h=750&q=72 600w, https://images.unsplash.com/photo-1623874228601-f4193c7b1818?auto=format&fit=crop&w=900&h=1125&q=72 900w, https://images.unsplash.com/photo-1623874228601-f4193c7b1818?auto=format&fit=crop&w=1300&h=1625&q=72 1300w"
           sizes="(max-width:899px) 92vw, 46vw" width="900" height="1125" fetchpriority="high" decoding="async"
-          alt="Donna in abbigliamento sportivo davanti a una grande finestra, pronta ad allenarsi a casa">
+          alt="Manubri appoggiati su un box in legno in palestra">
       </div>
       <div class="hero-badge" aria-hidden="true">
         <svg class="ring" viewBox="0 0 132 132"><defs><path id="badge-circle" d="M66,66 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><text><textPath href="#badge-circle">COACHING ONLINE · FITNESS AL FEMMINILE ·</textPath></text></svg>
@@ -625,8 +623,8 @@ strong{font-weight:600;color:var(--ink)}
 
     <figure class="video-frame reveal" style="margin:0" role="img" aria-label="Anteprima del video di presentazione di Cry: il video sarà disponibile a breve">
       <img loading="lazy" decoding="async" width="1600" height="900"
-        src="https://images.unsplash.com/photo-1635367216109-aa3353c0c22e?auto=format&fit=crop&w=1600&h=900&q=70"
-        srcset="https://images.unsplash.com/photo-1635367216109-aa3353c0c22e?auto=format&fit=crop&w=800&h=1000&q=70 800w, https://images.unsplash.com/photo-1635367216109-aa3353c0c22e?auto=format&fit=crop&w=1600&h=900&q=70 1600w, https://images.unsplash.com/photo-1635367216109-aa3353c0c22e?auto=format&fit=crop&w=2200&h=1238&q=70 2200w"
+        src="https://images.unsplash.com/photo-1771270786606-f5a0e57db762?auto=format&fit=crop&w=1600&h=900&q=70"
+        srcset="https://images.unsplash.com/photo-1771270786606-f5a0e57db762?auto=format&fit=crop&w=800&h=1000&q=70 800w, https://images.unsplash.com/photo-1771270786606-f5a0e57db762?auto=format&fit=crop&w=1600&h=900&q=70 1600w, https://images.unsplash.com/photo-1771270786606-f5a0e57db762?auto=format&fit=crop&w=2200&h=1238&q=70 2200w"
         sizes="(max-width:1240px) 94vw, 1192px" alt="">
       <div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg></div>
       <figcaption class="video-meta">
@@ -765,7 +763,12 @@ strong{font-weight:600;color:var(--ink)}
      6. BENEFICI
      ========================================================= -->
 <section class="section bg-sand" id="benefici" aria-labelledby="benefici-title">
-  <div class="container benefits">
+  <div class="container">
+    <div class="head-center reveal">
+      <p class="eyebrow">Cosa cambia</p>
+      <h2 class="h2" id="benefici-title">Non solo allenamento. <em>Un nuovo modo di prenderti cura di te.</em></h2>
+    </div>
+    <div class="benefits">
     <div class="collage reveal">
       <!-- FOTO PROVVISORIE (Unsplash). -->
       <div class="collage-main">
@@ -783,10 +786,6 @@ strong{font-weight:600;color:var(--ink)}
       <span class="collage-word" aria-hidden="true">un passo alla volta</span>
     </div>
     <div>
-      <div class="reveal">
-        <p class="eyebrow">Cosa cambia</p>
-        <h2 class="h2" id="benefici-title">Non solo allenamento. <em>Un nuovo modo di prenderti cura di te.</em></h2>
-      </div>
       <ul class="benefit-list">
         <li class="benefit reveal"><h3>Più costanza</h3><p>Un programma realistico è un programma che riesci a seguire, settimana dopo settimana.</p></li>
         <li class="benefit reveal"><h3>Più sicurezza</h3><p>Sai cosa fare, come farlo e perché. E giorno dopo giorno diventi più autonoma.</p></li>
@@ -794,6 +793,7 @@ strong{font-weight:600;color:var(--ink)}
         <li class="benefit reveal"><h3>Progressi che durano</h3><p>Passi graduali e sostenibili, che non svaniscono dopo un mese.</p></li>
         <li class="benefit reveal"><h3>Un rapporto nuovo con il movimento</h3><p>Allenarti smette di essere un dovere e diventa un momento tuo.</p></li>
       </ul>
+    </div>
     </div>
   </div>
 </section>
@@ -824,7 +824,6 @@ strong{font-weight:600;color:var(--ink)}
      8. RISULTATI E TESTIMONIANZE (placeholder)
      Sostituire ogni blocco .ph solo con contenuti autentici e con il consenso scritto delle clienti.
      - .r-transform: due foto (prima/dopo) → <img> dentro ciascun .r-half
-     - .r-progress: progressi reali (es. grafico o dato fornito dalla cliente)
      - .r-quote: testo della recensione + nome (o iniziale) della cliente
      ========================================================= -->
 <section class="section bg-sand" id="risultati" aria-labelledby="risultati-title">
@@ -843,26 +842,9 @@ strong{font-weight:600;color:var(--ink)}
         <div class="r-half"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="12" width="36" height="26" rx="4"/><circle cx="24" cy="25" r="7"/><path d="M17 12l3-5h8l3 5"/></svg><span class="word">Dopo</span></div>
         <span class="ph-label">Trasformazioni · in arrivo</span>
       </div>
-      <div class="ph r-progress reveal" style="--d:.1s" role="img" aria-label="Spazio riservato ai progressi delle clienti, in arrivo">
-        <span class="ph-label" style="align-self:flex-start">Progressi · in arrivo</span>
-        <h3>I progressi delle clienti</h3>
-        <div class="bars" aria-hidden="true"><span style="--h:28%"></span><span style="--h:40%"></span><span style="--h:48%"></span><span style="--h:62%"></span><span style="--h:74%"></span><span style="--h:88%"></span></div>
-      </div>
-      <div class="ph r-quote reveal" role="img" aria-label="Spazio riservato a una testimonianza, in arrivo">
+      <div class="ph r-quote reveal" style="--d:.1s" role="img" aria-label="Spazio riservato a una testimonianza, in arrivo">
         <span class="qm" aria-hidden="true">“</span>
         <span class="skel w90"></span><span class="skel w75"></span><span class="skel w60"></span>
-        <div class="r-person"><span class="r-avatar"></span><span class="skel w40"></span></div>
-        <span class="ph-label" style="align-self:flex-start">Testimonianza · in arrivo</span>
-      </div>
-      <div class="ph r-quote reveal" style="--d:.08s" role="img" aria-label="Spazio riservato a una testimonianza, in arrivo">
-        <span class="qm" aria-hidden="true">“</span>
-        <span class="skel w75"></span><span class="skel w90"></span><span class="skel w40"></span>
-        <div class="r-person"><span class="r-avatar"></span><span class="skel w40"></span></div>
-        <span class="ph-label" style="align-self:flex-start">Testimonianza · in arrivo</span>
-      </div>
-      <div class="ph r-quote reveal" style="--d:.16s" role="img" aria-label="Spazio riservato a una testimonianza, in arrivo">
-        <span class="qm" aria-hidden="true">“</span>
-        <span class="skel w90"></span><span class="skel w60"></span><span class="skel w75"></span>
         <div class="r-person"><span class="r-avatar"></span><span class="skel w40"></span></div>
         <span class="ph-label" style="align-self:flex-start">Testimonianza · in arrivo</span>
       </div>
@@ -875,7 +857,12 @@ strong{font-weight:600;color:var(--ink)}
      9. CHI SONO
      ========================================================= -->
 <section class="section bg-cream" id="chi-sono" aria-labelledby="chi-sono-title">
-  <div class="container about">
+  <div class="container">
+    <div class="head-center reveal">
+      <p class="eyebrow">Chi sono</p>
+      <h2 class="h2" id="chi-sono-title">Ciao, <em>sono Cry.</em></h2>
+    </div>
+    <div class="about">
     <div class="portrait-wrap reveal">
       <div class="portrait">
         <div class="portrait-ph" role="img" aria-label="Spazio riservato al ritratto di Cry, in arrivo">
@@ -887,10 +874,6 @@ strong{font-weight:600;color:var(--ink)}
     </div>
 
     <div class="about-text">
-      <div class="reveal">
-        <p class="eyebrow">Chi sono</p>
-        <h2 class="h2" id="chi-sono-title">Ciao, <em>sono Cry.</em></h2>
-      </div>
       <div class="reveal" style="--d:.1s">
         <p>Sono una <strong>fitness coach</strong> e lavoro con le donne che vogliono allenarsi con un metodo, senza dover seguire regole uguali per tutte. Mi occupo di allenamento al femminile e di educazione alimentare.</p>
         <p>Ogni donna ha ritmi, impegni e punti di partenza diversi. Per questo non consegno schede tutte uguali: prima ti ascolto, poi costruiamo il percorso insieme e lo aggiustiamo strada facendo.</p>
@@ -904,6 +887,7 @@ strong{font-weight:600;color:var(--ink)}
       <div class="cta-row reveal" style="--d:.2s">
         <a class="btn btn-primary" href="#contatti">Prenota la chiamata gratuita <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
+    </div>
     </div>
   </div>
 </section>
@@ -954,7 +938,7 @@ strong{font-weight:600;color:var(--ink)}
      ========================================================= -->
 <section class="section bg-plum final" id="contatti" aria-labelledby="contatti-title">
   <div class="container final-grid">
-    <div class="reveal">
+    <div class="head-center final-head reveal">
       <p class="eyebrow">Prenota la chiamata gratuita</p>
       <h2 id="contatti-title">Il momento giusto per iniziare è <em>quello che scegli tu.</em></h2>
       <p class="final-text">Non serve essere già in forma o avere tutto chiaro. Basta il primo passo: raccontami da dove parti e dove vuoi arrivare.</p>
